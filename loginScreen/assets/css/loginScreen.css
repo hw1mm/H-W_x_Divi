@@ -1,0 +1,24 @@
+body {
+  background: linear-gradient(0deg, rgb(0, 0, 0) 70%, rgb(255, 255, 255) 70%);
+}
+body .hw-login-hwLogo {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+body .hw-login-hwLogo img {
+  height: 50px;
+  width: 50px;
+}
+body #login #loginform {
+  border: none;
+}
+body #login #nav a {
+  color: #fff;
+}
+body #login #nav a:hover {
+  color: #fff;
+}
+body #login #backtoblog {
+  display: none;
+}
