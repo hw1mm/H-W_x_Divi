@@ -2,6 +2,8 @@
 
 function child_theme_styles()
 {
+
+    
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
     wp_enqueue_style('custom-style-css', get_stylesheet_directory_uri() . '/assets/customStyle.min.css', array('child-theme-css'));
@@ -23,6 +25,21 @@ $hw_defaltSettings = get_stylesheet_directory()  . '/defaultSettings/defaultSett
 if (file_exists($hw_defaltSettings)) {
     include_once($hw_defaltSettings);
 }
+
+// Shortcodes
+$hw_projectSlider = get_stylesheet_directory()  . '/shortcodes/hw_projectSlider/hw_projectSlider.php';
+if (file_exists($hw_projectSlider)) {
+    include_once($hw_projectSlider);
+}
+
+
+// Option pages
+$hw_projectSlider_optionPage = get_stylesheet_directory()  . '/shortcodes/hw_projectSlider/hw_projectSlider_optionPage.php';
+if (file_exists($hw_projectSlider_optionPage)) {
+    include_once($hw_projectSlider_optionPage);
+}
+
+
 
 
 add_action('init', 'my_remove_editor_from_post_type');
