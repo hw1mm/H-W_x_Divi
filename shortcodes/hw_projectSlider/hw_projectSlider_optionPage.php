@@ -30,6 +30,7 @@ function hw_projectSlider_page_content() {
             settings_fields('hw_projectSlider-settings-group');
             // Ausgabe der Einstellungsfelder
             do_settings_sections('hw_projectSlider-settings');
+            echo hw_projectSlider();
             ?>
             <input type="submit" class="button-primary" value="Einstellungen speichern">
         </form>
@@ -69,12 +70,14 @@ function hw_projectSlider_section_callback() {
 // Callback-Funktion zur Ausgabe des Multiselect-Felds
 function my_custom_multiselect_field_callback() {
     $selected_projects = get_option('hw-generalSider');
+    if(empty($selected_projects)){
+        $selected_projects = array();
+    }
     $projects = get_posts(array(
         'numberposts'      => -1,
         'order'            => 'asc',
         'post_type'        => 'project',
     ));
-    
     $htmlString = '';
     if (!empty($projects)) {
         $htmlString .= '<select id="hw-generalSider" multiple name="hw-generalSider[]">';

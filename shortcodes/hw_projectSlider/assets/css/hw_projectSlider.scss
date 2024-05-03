@@ -1,0 +1,23 @@
+.hw-projectSlider-wrapper {
+    .hw-projectSlider-swiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                .hw-projectSlider-swiper-content-wrapper {
+                    aspect-ratio: 1400/899;
+                    background-size: cover;
+                    background-repeat: initial;
+                    .hw-projectSlider-swiper-content {
+                        width: 70%;
+                        background-color: #fff;
+                        border-radius: 2px;
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 31px 46px;
+                    }
+                }
+            }
+        }
+    }
+}
