@@ -1,7 +1,14 @@
 #hw_projectSlider-multiselect-field {
-    // display: none;
+    display: none;
 }
 .hw-project {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+    .col-6{
+        flex-grow: 1;
+    }
     .ui-sortable {
         min-height: 200px;
         max-height: 500px;
@@ -14,7 +21,13 @@
             cursor: move;
         }
         .ui-sortable-handle{
-            
+            border: 1px solid #949494;
+            border-radius: 2px;
+            padding: 5px;
         }
     }
+}
+.hw-projectSlider-wrapper{
+    width: 50%;
+    margin-bottom: 50px;
 }

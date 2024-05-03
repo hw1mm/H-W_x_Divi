@@ -6,7 +6,7 @@ function hw_projectSlider_page()
     wp_enqueue_script('hw-slimSelect', 'https://unpkg.com/slim-select@latest/dist/slimselect.min.js', true);
     wp_enqueue_style('hw-slimSelect', 'https://unpkg.com/slim-select@latest/dist/slimselect.css');
 
-    wp_enqueue_style('hw-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+    // wp_enqueue_style('hw-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
     wp_enqueue_script('hw-projectSlider-backend', str_replace($document_root, '', __DIR__) . '/assets/js/backend.js', array('hw-slimSelect'));
     wp_enqueue_style('hw-projectSlider-backend', str_replace($document_root, '', __DIR__) . '/assets/css/backend.min.css');
@@ -35,7 +35,7 @@ function hw_projectSlider_page_content()
             settings_fields('hw_projectSlider-settings-group');
             // Ausgabe der Einstellungsfelder
             do_settings_sections('hw_projectSlider-settings');
-            // echo hw_projectSlider();
+            echo hw_projectSlider();
             ?>
             <input type="submit" class="button-primary" value="Einstellungen speichern">
         </form>
@@ -79,7 +79,7 @@ function my_custom_multiselect_field_callback()
 {
     $selected_projectsStr = get_option('hw-generalSider');
     $selected_projects = explode(',', $selected_projectsStr);
-    if (empty($selected_projects)) {
+    if (empty($selected_projects[0])) {
         $selected_projects = array();
     }
     $projects = get_posts(array(
@@ -87,7 +87,7 @@ function my_custom_multiselect_field_callback()
         'order'            => 'asc',
         'post_type'        => 'project',
     ));
-    
+
     $htmlString = '';
     $htmlString .= '<input type="text" id="hw_projectSlider-multiselect-field" name="hw-generalSider" class="connectedSortable" value="' . $selected_projectsStr . '">';
 
@@ -106,7 +106,7 @@ function my_custom_multiselect_field_callback()
 
 function getSortableElementSelected($projects, $selected_projects)
 {
-    $htmlString = '<h5>Ausgewhälte Projekte</h5>';
+    $htmlString = '<h3>Nicht ausgewählte Projekte</h3>';
     $htmlString .= '<ul id="hw-generalSider-sortable-notSelected" class="connectedSortable">';
     foreach ($projects as $key => $project) {
         if (!in_array($project->ID, $selected_projects))
@@ -118,9 +118,9 @@ function getSortableElementSelected($projects, $selected_projects)
 }
 function getSortableElementNotSelected($selected_projects)
 {
-    $htmlString = '<h5>Nicht ausgewhälte Projekte</h5>';
+    $htmlString = '<h3>Ausgewählte Projekte</h3>';
+    $htmlString .= '<ul id="hw-generalSider-sortable-selected" class="connectedSortable">';
     if (!empty($selected_projects)) {
-        $htmlString .= '<ul id="hw-generalSider-sortable-selected" class="connectedSortable">';
         foreach ($selected_projects as $key => $projectID) {
             $project = get_post($projectID);
             $htmlString .= '<li id="' . $project->ID . '" class="alert alert-light">' . $project->post_title . '</li>';

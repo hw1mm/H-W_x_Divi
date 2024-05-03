@@ -20,6 +20,8 @@ function hw_projectSlider($atts = null, $content = null)
       'order'            => 'asc',
       'post_type'        => 'project',
     ));
+  }else{
+    $projects = explode(',',$projects);
   }
 
 

@@ -1,3 +1,16 @@
+#hw_projectSlider-multiselect-field {
+  display: none;
+}
+
+.hw-project {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.hw-project .col-6 {
+  flex-grow: 1;
+}
 .hw-project .ui-sortable {
   min-height: 200px;
   max-height: 500px;
@@ -9,4 +22,14 @@
 }
 .hw-project .ui-sortable:hover {
   cursor: move;
+}
+.hw-project .ui-sortable .ui-sortable-handle {
+  border: 1px solid #949494;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.hw-projectSlider-wrapper {
+  width: 50%;
+  margin-bottom: 50px;
 }
