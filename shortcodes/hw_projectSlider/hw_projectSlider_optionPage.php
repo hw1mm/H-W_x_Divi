@@ -110,7 +110,7 @@ function getSortableElementSelected($projects, $selected_projects)
     $htmlString .= '<ul id="hw-generalSider-sortable-notSelected" class="connectedSortable">';
     foreach ($projects as $key => $project) {
         if (!in_array($project->ID, $selected_projects))
-            $htmlString .= '<li id="' . $project->ID . '" class="alert alert-light">' . $project->post_title . '</li>';
+            $htmlString .= '<li id="' . $project->ID . '"><b>' . get_the_terms($project, 'kunde')[0]->name . '</b> - ' . $project->post_title . '</li>';
     }
     $htmlString .= '</ul>';
 
