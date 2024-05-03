@@ -20,15 +20,15 @@ function hw_projectSlider($atts = null, $content = null)
       'order'            => 'asc',
       'post_type'        => 'project',
     ));
-  }else{
-    $projects = explode(',',$projects);
+  } else {
+    $projects = explode(',', $projects);
   }
 
 
   $htmlString .= '
     <div class="hw-projectSlider-wrapper">
-        <div class="swiper hw-projectSlider-swiper">
-    <div class="swiper-wrapper">';
+      <div class="swiper hw-projectSlider-swiper">
+        <div class="swiper-wrapper">';
 
   if (!empty($projects)) {
     foreach ($projects as $key => $project) {
@@ -39,33 +39,8 @@ function hw_projectSlider($atts = null, $content = null)
           <div class="hw-projectSlider-headline">
             <h2>Unsere <br>Projekte</h2>
           </div>
-          <div class="hw-projectSlider-swiper-content">
-            <div class="hw-projectSlider-swiper-content-inside">';
-
-      if (!empty(get_the_terms($project, 'kunde'))) {
-        $htmlString .=  '<a href="' . get_permalink($project) . '" class="hw-projectSlider-text-content-company">
-                <span class="hw-projectSlider-text-content-company-name">
-                  ' . get_the_terms($project, 'kunde')[0]->name . '
-                </span>
-                <span class="hw-projectSlider-text-content-company-icon">
-                  <i data-feather="external-link"></i>
-                </span>
-              </a>';
-      }
-
-      $htmlString .= '<div class="hw-projectSlider-text-content-text">
-              <h3>'.get_field('textauszug',$project)['uberschrift'].'</h3>
-              <p>'.get_field('textauszug',$project)['textauszug'].'</p>
-            </div>
-            <div class="hw-projectSlider-text-content-btn">
-            <a href="' . get_post_type_archive_link('project') . '" class="hw-projectSlider-text-content-btn-showAll hw-btn-white">Alle Projekte</a>
-            </div>
-            </div>
-            <div class="swiper-button-next-wrapper">
-              <div class="swiper-button-next"></div>
-            </div>
-        </div>
-        </div>
+          </div>
+          '.getSwiperSlideContent($project).'
       </div>';
     }
   }
@@ -83,4 +58,37 @@ function getSliderImage($projectID)
 {
   $imgURL = get_field('slider_bild', $projectID);
   return $imgURL;
+}
+
+
+function getSwiperSlideContent($project)
+{
+  $htmlString = '
+  <div class="hw-projectSlider-swiper-content">
+  <div class="hw-projectSlider-swiper-content-inside">';
+
+  if (!empty(get_the_terms($project, 'kunde'))) {
+    $htmlString .=  '<a href="' . get_permalink($project) . '" class="hw-projectSlider-text-content-company">
+      <span class="hw-projectSlider-text-content-company-name">
+        ' . get_the_terms($project, 'kunde')[0]->name . '
+      </span>
+      <span class="hw-projectSlider-text-content-company-icon">
+        <i data-feather="external-link"></i>
+      </span>
+    </a>';
+  }
+
+  $htmlString .= '<div class="hw-projectSlider-text-content-text">
+    <h3>' . get_field('textauszug', $project)['uberschrift'] . '</h3>
+    <p>' . get_field('textauszug', $project)['textauszug'] . '</p>
+  </div>
+  <div class="hw-projectSlider-text-content-btn">
+  <a href="' . get_post_type_archive_link('project') . '" class="hw-projectSlider-text-content-btn-showAll hw-btn-white">Alle Projekte</a>
+  </div>
+  </div>
+  <div class="swiper-button-next-wrapper">
+    <div class="swiper-button-next"></div>
+  </div>
+</div>';
+  return $htmlString;
 }
