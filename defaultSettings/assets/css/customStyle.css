@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "HelveticaNowText ExtraBold";
+  src: url("/wp-content/uploads/et-fonts/HelveticaNowText-ExtraBold.ttf") format("ttf");
+}
+.hw-btn-white {
+  color: #000;
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  font-family: "HelveticaNowText ExtraBold", Helvetica, Arial, Lucida, sans-serif;
+  padding: 15px 38px;
+}
+.hw-btn-white:hover {
+  color: #fff;
+  background-color: #000;
+}

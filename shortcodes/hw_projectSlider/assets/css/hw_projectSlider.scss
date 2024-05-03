@@ -1,3 +1,4 @@
+@use "../../../../defaultSettings/assets/css/customStyle.scss" as font;
 .hw-projectSlider-wrapper {
     .hw-projectSlider-swiper {
         .swiper-wrapper {
@@ -6,6 +7,11 @@
                     aspect-ratio: 1400/899;
                     background-size: cover;
                     background-repeat: initial;
+                    h2 {
+                        font-family: font.$hw-ff-extraBold;
+                        color: #fff;
+                        line-height: 1;
+                    }
                     .hw-projectSlider-swiper-content {
                         position: absolute;
                         bottom: 5%;
@@ -17,10 +23,27 @@
                         flex-wrap: nowrap;
                         gap: 15px;
                         .hw-projectSlider-swiper-content-inside {
-                            // width: 70%;
                             background-color: #fff;
                             border-radius: 2px;
                             padding: 31px 46px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 22px;
+                            .hw-projectSlider-text-content-company {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 22px;
+                                width: fit-content;
+                                .hw-projectSlider-text-content-company-name {
+                                    font-family: font.$hw-ff-extraBold;
+                                    color: #fff;
+                                    background-color: #000;
+                                    padding: 9px 12px;
+                                    line-height: 1;
+                                }
+                                .hw-projectSlider-text-content-company-icon {
+                                }
+                            }
                         }
                         .swiper-button-next-wrapper {
                             background-color: #fff;
@@ -36,7 +59,7 @@
                             }
                         }
                     }
-                    .hw-projectSlider-headline{
+                    .hw-projectSlider-headline {
                         width: 70%;
                         margin-left: 15%;
                         padding-top: 5%;
