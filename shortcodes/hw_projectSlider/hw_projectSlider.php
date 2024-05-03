@@ -34,33 +34,39 @@ function hw_projectSlider($atts = null, $content = null)
     $htmlString .= '
       <div class="swiper-slide">
         <div class="hw-projectSlider-swiper-content-wrapper" style="background-image:url(' . $imgURL . ')">
+          <div class="hw-projectSlider-headline">
+            <h2>Unsere Projekte</h2>
+          </div>
           <div class="hw-projectSlider-swiper-content">
-    <a href="' . get_permalink($project) . '" class="hw-projectSlider-text-content-company">
-      <span class="hw-projectSlider-text-content-company-name">
-        ' . get_the_terms($project, 'kunde')[0]->name . '
-      </span>
-      <span class="hw-projectSlider-text-content-company-icon">
-        <i data-feather="external-link"></i>
-      </span>
-    </a>
-    <div class="hw-projectSlider-text-content-text">
-      <h3>Authentische Bilder</h3>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      </p>
-    </div>
-    <div class="hw-projectSlider-text-content-btn">
-      <a href="' . get_post_type_archive_link('project') . '" class="hw-projectSlider-text-content-btn-showAll">Alle Projekte</a>
-    </div>
-  </div>
+            <div class="hw-projectSlider-swiper-content-inside">
+              <a href="' . get_permalink($project) . '" class="hw-projectSlider-text-content-company">
+                <span class="hw-projectSlider-text-content-company-name">
+                  ' . get_the_terms($project, 'kunde')[0]->name . '
+                </span>
+                <span class="hw-projectSlider-text-content-company-icon">
+                <i data-feather="external-link"></i>
+              </span>
+            </a>
+            <div class="hw-projectSlider-text-content-text">
+              <h3>Authentische Bilder</h3>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              </p>
+            </div>
+            <div class="hw-projectSlider-text-content-btn">
+            <a href="' . get_post_type_archive_link('project') . '" class="hw-projectSlider-text-content-btn-showAll">Alle Projekte</a>
+            </div>
+            </div>
+            <div class="swiper-button-next-wrapper">
+              <div class="swiper-button-next"></div>
+            </div>
+        </div>
         </div>
       </div>';
   }
 
   $htmlString .= '
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
   </div>
 </div>';
   return $htmlString;

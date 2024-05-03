@@ -4,10 +4,10 @@ jQuery(function ($) {
 
     const swiperImg = new Swiper('.hw-projectSlider-swiper', {
         loop:true,
-        // effect: "fade",
+        effect: "fade",
         navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            // prevEl: '.swiper-button-prev',
         },
     });
     // const swiperText = new Swiper('.hw-projectSlider-swiperText', {

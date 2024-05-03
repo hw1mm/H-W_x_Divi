@@ -7,14 +7,39 @@
                     background-size: cover;
                     background-repeat: initial;
                     .hw-projectSlider-swiper-content {
-                        width: 70%;
-                        background-color: #fff;
-                        border-radius: 2px;
                         position: absolute;
                         bottom: 5%;
                         left: 50%;
                         transform: translateX(-50%);
-                        padding: 31px 46px;
+                        width: 70%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        gap: 15px;
+                        .hw-projectSlider-swiper-content-inside {
+                            // width: 70%;
+                            background-color: #fff;
+                            border-radius: 2px;
+                            padding: 31px 46px;
+                        }
+                        .swiper-button-next-wrapper {
+                            background-color: #fff;
+                            border-radius: 2px;
+                            padding: 0 7px 0 10px;
+                            .swiper-button-next {
+                                position: initial;
+                                display: block;
+                                margin-top: 0;
+                                height: 100%;
+                                display: flex;
+                                color: #000;
+                            }
+                        }
+                    }
+                    .hw-projectSlider-headline{
+                        width: 70%;
+                        margin-left: 15%;
+                        padding-top: 5%;
                     }
                 }
             }
