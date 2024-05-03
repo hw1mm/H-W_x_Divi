@@ -5,6 +5,8 @@
 
 $hw-ff-extraBold: "HelveticaNowText ExtraBold", Helvetica, Arial, Lucida, sans-serif;
 
+$hw-fs-base: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
+
 .hw-btn-white {
     color: #000;
     background-color: #fff;
