@@ -35,6 +35,10 @@ $hw_teamSlider = get_stylesheet_directory()  . '/shortcodes/hw_teamSlider/hw_tea
 if (file_exists($hw_teamSlider)) {
     include_once($hw_teamSlider);
 }
+$hw_teamOverview = get_stylesheet_directory()  . '/shortcodes/hw_teamOverview/hw_teamOverview.php';
+if (file_exists($hw_teamOverview)) {
+    include_once($hw_teamOverview);
+}
 
 
 // Option pages

@@ -1,0 +1,15 @@
+@use "../../../../defaultSettings/assets/css/customStyle.scss" as font;
+
+.hw-teamSlider-wrapper{
+    .hw-teamSlider-swiper{
+        .swiper-slide{
+            .hw-teamSlider-swiper-content-wrapper{
+                .hw-teamSlider-swiper-content{
+                    img{
+                        aspect-ratio: 251/308;
+                    }
+                }
+            }
+        }
+    }
+}
