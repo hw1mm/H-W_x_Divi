@@ -6,6 +6,13 @@
 $hw-ff-extraBold: "HelveticaNowText ExtraBold", Helvetica, Arial, Lucida, sans-serif;
 
 $hw-fs-base: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
+$hw-fs-md: clamp(0.75rem, 1.2vi + 0.45rem, 1.5rem);
+$hw-fs-lg: clamp(0.75rem, 1.8vi + 0.3rem, 1.88rem);
+$hw-fs-xl: clamp(0.75rem, 4.8vi + -0.45rem, 3.75rem);
+$hw-fs-xxl: clamp(0.75rem, 13.8vi + -2.7rem, 9.38rem);
+
+$hw-bp-m: 767px;
+$hw-bp-t: 980px;
 
 .hw-btn-white {
     color: #000;
@@ -15,8 +22,8 @@ $hw-fs-base: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
     text-transform: uppercase;
     font-family: $hw-ff-extraBold;
     padding: 15px 38px;
-    &:hover{
-        color:#fff;
+    &:hover {
+        color: #fff;
         background-color: #000;
     }
 }

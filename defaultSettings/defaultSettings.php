@@ -2,7 +2,7 @@
 function hw_enqueue_defaultSettings()
 {
     wp_enqueue_script('hw_bootstrap_script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js');
-    wp_enqueue_style('hw_bootstrap_style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+    // wp_enqueue_style('hw_bootstrap_style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 }
 add_action('wp_enqueue_scripts', 'hw_enqueue_defaultSettings');
 
