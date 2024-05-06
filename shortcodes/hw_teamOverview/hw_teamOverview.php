@@ -28,14 +28,17 @@ function hw_teamOverview($atts = null, $content = null)
             if ($i == 3) {
                 $htmlString .= '
                     <div class="hw-teamOverview-break-small col-8 d-none d-d-block">
-                        <div style="height: 100%;background-image:url(/wp-content/uploads/2024/05/HW-David-Wagner-Gespraech.webp)"></div>
+                        <div style="height: 100%;background-image:url(' . get_option('hw_teamOverview_break_0') . ')"></div>
                     </div>';
             }
             if ($i > 3 && $i % 6 == 0) {
-                $htmlString .=  '
+                $imgURL =  get_option('hw_teamOverview_break_' . $i / 6);
+                if (!empty($imgURL)) {
+                    $htmlString .=  '
                     <div class="hw-teamOverview-break-big col-12">
-                        <img src="/wp-content/uploads/2024/05/HW-David-Wagner-Gespraech.webp">
+                        <img src="' . $imgURL . '">
                     </div>';
+                }
             }
             $i++;
         }

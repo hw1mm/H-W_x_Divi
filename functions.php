@@ -46,6 +46,10 @@ $hw_projectSlider_optionPage = get_stylesheet_directory()  . '/shortcodes/hw_pro
 if (file_exists($hw_projectSlider_optionPage)) {
     include_once($hw_projectSlider_optionPage);
 }
+$hw_teamOverview_optionPage = get_stylesheet_directory()  . '/shortcodes/hw_teamOverview/hw_teamOverview_optionPage.php';
+if (file_exists($hw_teamOverview_optionPage)) {
+    include_once($hw_teamOverview_optionPage);
+}
 
 
 
