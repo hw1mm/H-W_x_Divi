@@ -29,7 +29,7 @@ function hw_teamOverview($atts = null, $content = null)
                 </div>';
             if ($i == 3) {
                 $htmlString .= '
-                    <div class="hw-teamOverview-break-small col-8 d-none">
+                    <div class="hw-teamOverview-break-small col-8 d-none d-d-block">
                         <div style="height: 100%;background-image:url(' . get_option('hw_teamOverview_break_0') . ')"></div>
                     </div>';
             }
