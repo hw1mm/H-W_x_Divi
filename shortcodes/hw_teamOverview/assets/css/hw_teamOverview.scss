@@ -12,6 +12,7 @@
             }
             .hw-teamOverview-item-content-text {
                 display: flex;
+                position: relative;
                 flex-direction: column;
                 gap: 0.5em;
                 // padding: 0 16px 32px 16px;
@@ -23,16 +24,28 @@
                 @media all and (max-width: custom.$hw-bp-m) {
                     margin-top: 26px;
                 }
+                .hw-teamOverview-item-content-link{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: flex;
+                    width: fit-content;
+                    svg{
+                        height: custom.$hw-fs-base;
+                    }
+                }
                 .hw-teamOverview-item-content-name {
                     font-family: custom.$hw-ff-extraBold;
-                    font-size: custom.$hw-fs-md;
+                    font-size: custom.$hw-fs-base;
                     text-transform: uppercase;
                     line-height: 1;
+                    width: 83%;
                 }
                 .hw-teamOverview-item-content-job {
                     // text-transform: uppercase;
-                    font-size: custom.$hw-fs-base;
+                    font-size: calc(custom.$hw-fs-base * 0.8);
                     line-height: 1;
+                    width: 83%;
                 }
             }
         }
@@ -51,6 +64,12 @@
             width: 100%;
             height: auto;
             object-fit: cover;
+            @media all and (max-width: custom.$hw-bp-m) {
+                width: 100vw;
+                max-width: unset;
+                margin-left: -5vw;
+            aspect-ratio: 444/290;
+            }
         }
     }
 }

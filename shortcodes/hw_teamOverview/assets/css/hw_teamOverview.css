@@ -28,6 +28,7 @@
 }
 .hw-teamOverview-wrapper .hw-teamOverview-item-wrapper a .hw-teamOverview-item-content-text {
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 0.5em;
   margin-top: 46px;
@@ -43,15 +44,28 @@
     margin-top: 26px;
   }
 }
+.hw-teamOverview-wrapper .hw-teamOverview-item-wrapper a .hw-teamOverview-item-content-text .hw-teamOverview-item-content-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.hw-teamOverview-wrapper .hw-teamOverview-item-wrapper a .hw-teamOverview-item-content-text .hw-teamOverview-item-content-link svg {
+  height: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
+}
 .hw-teamOverview-wrapper .hw-teamOverview-item-wrapper a .hw-teamOverview-item-content-text .hw-teamOverview-item-content-name {
   font-family: "HelveticaNowText ExtraBold", Helvetica, Arial, Lucida, sans-serif;
-  font-size: clamp(0.75rem, 1.2vi + 0.45rem, 1.5rem);
+  font-size: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
   text-transform: uppercase;
   line-height: 1;
+  width: 83%;
 }
 .hw-teamOverview-wrapper .hw-teamOverview-item-wrapper a .hw-teamOverview-item-content-text .hw-teamOverview-item-content-job {
-  font-size: clamp(0.75rem, 0.4vi + 0.65rem, 1rem);
+  font-size: calc(clamp(0.75rem, 0.4vi + 0.65rem, 1rem) * 0.8);
   line-height: 1;
+  width: 83%;
 }
 @media all and (max-width: 767px) {
   .hw-teamOverview-wrapper .hw-teamOverview-break-small {
@@ -64,4 +78,12 @@
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media all and (max-width: 767px) {
+  .hw-teamOverview-wrapper .hw-teamOverview-break-big img {
+    width: 100vw;
+    max-width: unset;
+    margin-left: -5vw;
+    aspect-ratio: 444/290;
+  }
 }
